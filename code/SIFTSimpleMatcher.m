@@ -30,7 +30,7 @@ function match = SIFTSimpleMatcher(descriptor1, descriptor2, thresh)
 %                                                                              %
 %                                YOUR CODE HERE:                               %
 %                                                                              %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 len_image2 = length(descriptor2);
 
 for i = 1:length(descriptor1)
@@ -40,6 +40,7 @@ for i = 1:length(descriptor1)
 	if ratio < thresh
 		index = find(dist==dist_sort(1));
 		match = [match; [i, index]];
+	end
 end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

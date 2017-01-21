@@ -45,7 +45,7 @@ end
 
 %% Outbounds of panorama image
 outBounds = zeros(2,2);
-outBounds(1,:) = Inf;
+outBounds(1,:) = [0 0];
 outBounds(2,:) = -Inf;
 
 %% Choose reference image Iref
@@ -102,7 +102,7 @@ for idx = refIdx-1:-1:1,
                         'FillValues', NaN, 'XYScale',1);
     result_mask = ~isnan(Pano(:,:,1));
     temp_mask = ~isnan(AddOn(:,:,1));
-    add_mask = temp_mask & (~result_mask);
+	add_mask = temp_mask & (~result_mask);
 
     for c = 1 : size(Pano,3),
         cur_im = Pano(:,:,c);

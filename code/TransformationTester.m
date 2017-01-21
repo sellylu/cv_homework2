@@ -8,7 +8,7 @@ img2 = imread('../data/uttower2.jpg');
 %% Feature detection
 I = single(rgb2gray(img1));
 [f,d] = vl_sift(I) ;
-pointsInImage1 = double(f(1:2,:)');
+pointsInImage1 = (f(1:2,:)');
 desc1 = double(d');
 
 I = single(rgb2gray(img2));

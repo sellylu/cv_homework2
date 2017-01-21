@@ -11,12 +11,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Clear all
-clc; close all; clc;
+clc; clear; close all; clc;
 
 %% Load a list of images (Change file name if you want to use other images)
-imgList = dir('../data/yosemite*.jpg');
+imgList = dir('../data/school*.jpg');
 
-saveFileName = '../results/yosemite.jpg';
+saveFileName = '../results/school.jpg';
 
 %% Add path
 addpath('KeypointDetect');

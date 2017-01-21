@@ -43,21 +43,18 @@ function H = RANSACFit(p1, p2, match, maxIter, seedSetSize, maxInlierError, good
     % edit any of this code, just the ComputeError() function below
     
     iota = Inf;
-    kappa = 0;
-    lambda = iota;
     alpha = seedSetSize;
-    for i = 1 : maxIter,
+    for i = 1 : maxIter
         [beta, gamma] = part(match, alpha);
         eta = ComputeAffineMatrix(p1(beta(:, 1), :), p2(beta(:, 2), :));
         delta = ComputeError(eta, p1, p2, gamma);
         epsilon = (delta <= maxInlierError);
-        if sum(epsilon(:)) + alpha >= goodFitThresh,
+        if sum(epsilon(:)) + alpha >= goodFitThresh
             zeta = [beta; gamma(epsilon, :)];
             eta = ComputeAffineMatrix(p1(zeta(:, 1), :), p2(zeta(:, 2), :));
             theta = sum(ComputeError(eta, p1, p2, zeta));
-            if theta < iota,
+            if theta < iota
                 H = eta;
-                kappa = lambda;
                 iota = theta;
             end
         end
